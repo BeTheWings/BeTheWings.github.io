@@ -3,6 +3,7 @@
 -->
 
 <div id="sidebar" class="d-flex flex-column align-items-end">
+<<<<<<< HEAD
 
   <div class="profile-wrapper text-center">
     <div id="avatar">
@@ -25,15 +26,47 @@
     </div>
 
     <div class="site-subtitle font-italic">{{- site.tagline -}}</div>
+=======
+  <div class="profile-wrapper text-center">
+    <div id="avatar">
+      <a href="{{ '/' | relative_url }}" class="mx-auto">
+        {% if site.avatar != empty and site.avatar %}
+          {% capture avatar_url %}
+            {% if site.avatar contains '://' %}
+              {{ site.avatar }}
+            {% elsif site.img_cdn != empty and site.img_cdn %}
+              {{ site.avatar | prepend: site.img_cdn }}
+            {% else %}
+              {{ site.avatar | relative_url }}
+            {% endif %}
+          {% endcapture %}
+          <img src="{{ avatar_url | strip }}" alt="avatar" onerror="this.style.display='none'">
+        {% endif %}
+      </a>
+    </div>
+
+    <div class="site-title">
+      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    </div>
+    <div class="site-subtitle font-italic">{{ site.tagline }}</div>
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
 
   </div><!-- .profile-wrapper -->
 
   <ul class="w-100">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
     <!-- home -->
     <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
       <a href="{{ '/' | relative_url }}" class="nav-link">
         <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
+<<<<<<< HEAD
         <span>{{ "HOME" }}</span>
+=======
+        <span>{{ site.data.locales[site.lang].tabs.home | upcase }}</span>
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
       </a>
     </li>
     <!-- the real tabs -->
@@ -41,13 +74,20 @@
     <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
       <a href="{{ tab.url | relative_url }}" class="nav-link">
         <i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
+<<<<<<< HEAD
         <span>{{ tab.title | upcase }}</span>
+=======
+        {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
+
+        <span>{{ site.data.locales[site.lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
       </a>
     </li> <!-- .nav-item -->
     {% endfor %}
 
   </ul> <!-- ul.nav.flex-column -->
 
+<<<<<<< HEAD
   <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center">
 
     {% for entry in site.data.contact %}
@@ -70,12 +110,63 @@
       <a href="{{ url }}" aria-label="{{ entry.type }}"
         {% unless site.theme_mode %}class="order-{{ forloop.index | plus: 2 }}"{% endunless %}
         {% unless entry.noblank %}target="_blank" rel="noopener"{% endunless %}>
+=======
+  <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
+
+    {% unless site.theme_mode %}
+      <button class="mode-toggle btn" aria-label="Switch Mode">
+        <i class="fas fa-adjust"></i>
+      </button>
+
+      {% if site.data.contact.size > 0 %}
+        <span class="icon-border"></span>
+      {% endif %}
+    {% endunless %}
+
+    {% for entry in site.data.contact %}
+
+      {% case entry.type %}
+        {% when 'github' %}
+          {% assign url = 'https://github.com/' | append: site.github.username %}
+        {% when 'twitter' %}
+          {% assign url = 'https://twitter.com/' | append: site.twitter.username %}
+        {% when 'email' %}
+          {% assign email = site.social.email | split: '@' %}
+          {%- capture url -%}
+            javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
+          {%- endcapture -%}
+        {% when 'rss' %}
+          {% assign url = '/feed.xml' | relative_url %}
+        {% else %}
+          {% assign url = entry.url %}
+      {% endcase %}
+
+      {% if url %}
+      <a href="{{ url }}" aria-label="{{ entry.type }}"
+        {% assign link_type = nil %}
+
+        {% unless entry.noblank %}
+          {% if entry.type == 'mastodon' %}
+            {% assign link_type = "me" %}
+          {% else %}
+            {% assign link_type = "noopener" %}
+          {% endif %}
+          target="_blank"
+        {% endunless %}
+
+        {% if entry.type == 'mastodon' %}
+          {% assign link_type = "me" %}
+        {% endif %}
+
+        {% if link_type %}rel="{{ link_type }}"{% endif %}>
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
         <i class="{{ entry.icon }}"></i>
       </a>
       {% endif %}
 
     {% endfor %}
 
+<<<<<<< HEAD
     {% unless site.theme_mode %}
       {% if site.data.contact.size > 0 %}
         <span class="icon-border order-2"></span>
@@ -86,6 +177,8 @@
       </span>
     {% endunless %}
 
+=======
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
   </div> <!-- .sidebar-bottom -->
 
 </div><!-- #sidebar -->

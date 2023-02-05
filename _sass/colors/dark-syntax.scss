@@ -3,21 +3,40 @@
  */
 
 @mixin dark-syntax {
+<<<<<<< HEAD
   /* -----  My styles ------ */
   --highlight-bg-color: #252525;
   --highlighter-rouge-color: #de6b18;
   --highlight-lineno-color: #6c6c6d;
   --highlight-lineno-border-color: #303435;
   --inline-code-bg: #272822;
+=======
+  --highlight-bg-color: #252525;
+  --highlighter-rouge-color: #de6b18;
+  --highlight-lineno-color: #6c6c6d;
+  --inline-code-bg: #272822;
+  --code-header-text-color: #6a6a6a;
+  --code-header-muted-color: rgb(60, 60, 60);
+  --code-header-icon-color: rgb(86, 86, 86);
+  --clipboard-checked-color: #2bcc2b;
+  --filepath-text-color: #bdbdbd;
+
+  pre { color: #bfbfbf; } /* override Bootstrap */
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
 
   .highlight {
     .gp { color: #818c96; }
   }
 
+<<<<<<< HEAD
   pre { color: #bfbfbf; } /* override Bootstrap */
   kbd { background-color: black; }
 
   /* syntax highlight colors from https://raw.githubusercontent.com/jwarby/pygments-css/master/monokai.css */
+=======
+  /* syntax highlight colors from https://raw.githubusercontent.com/jwarby/pygments-css/master/monokai.css */
+
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
   .highlight pre { background-color: var(--highlight-bg-color); }
   .highlight .hll { background-color: var(--highlight-bg-color); }
   .highlight .c { color: #75715e; } /* Comment */

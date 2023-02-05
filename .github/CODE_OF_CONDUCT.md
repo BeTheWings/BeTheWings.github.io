@@ -70,4 +70,8 @@ available at <https://www.contributor-covenant.org/version/1/4/code-of-conduct.h
 For answers to common questions about this code of conduct, see
 <https://www.contributor-covenant.org/faq>
 
+<<<<<<< HEAD
 [homepage]: https://www.contributor-covenant.org
+=======
+[homepage]: https://www.contributor-covenant.org
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864

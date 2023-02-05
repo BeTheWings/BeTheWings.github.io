@@ -68,8 +68,24 @@
 
   /* --- custom light colors --- */
   --highlight-bg-color: #f7f7f7;
+<<<<<<< HEAD
   --highlighter-rouge-color: #505050;
   --highlight-lineno-color: #c2c6cc;
   --highlight-lineno-border-color: #e9ecef;
   --inline-code-bg: #f3f3f3;
 } // light-syntax
+=======
+  --highlighter-rouge-color: #2f2f2f;
+  --highlight-lineno-color: #c2c6cc;
+  --inline-code-bg: #f3f3f3;
+  --code-header-text-color: #a3a3b1;
+  --code-header-muted-color: #ebebeb;
+  --code-header-icon-color: #d1d1d1;
+  --clipboard-checked-color: #43c743;
+
+  [class^="prompt-"] {
+    --inline-code-bg: #fbfafa;
+    --highlighter-rouge-color: rgb(82, 82, 82);
+  }
+} /* light-syntax */
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864

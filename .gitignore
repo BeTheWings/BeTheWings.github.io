@@ -1,6 +1,16 @@
 # hidden files
 .*
+<<<<<<< HEAD
 !.github
+=======
+!.git*
+!.editorconfig
+!.nojekyll
+!.husky
+!.commitlintrc.json
+!.versionrc.json
+!.stylelintrc.json
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
 
 # bundler cache
 _site

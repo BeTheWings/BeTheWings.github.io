@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 name: 'Continuous Integration'
+=======
+name: 'CI'
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
 on:
   push:
     branches-ignore:
       - 'production'
+<<<<<<< HEAD
     tags-ignore:
       - '*'
     paths-ignore:
@@ -11,6 +16,13 @@ on:
       - '.travis.yml'
       - '.gitignore'
       - 'docs/**'
+=======
+      - 'docs'
+    paths-ignore:
+      - '.github/**'
+      - '!.github/workflows/ci.yml'
+      - '.gitignore'
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
       - 'README.md'
       - 'LICENSE'
   pull_request:
@@ -18,6 +30,7 @@ on:
       - '**'
 
 jobs:
+<<<<<<< HEAD
   ci:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -27,12 +40,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+=======
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        ruby: [2.7, 3]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
         with:
           fetch-depth: 0  # for posts's lastmod
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
+<<<<<<< HEAD
           ruby-version: 2.7
           bundler-cache: true
 
@@ -45,3 +71,10 @@ jobs:
       - name: Test Site
         run: |
           bash tools/test.sh
+=======
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
+
+      - name: Test Site
+        run: bash tools/test
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864

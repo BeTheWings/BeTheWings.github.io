@@ -3,13 +3,20 @@
 */
 
 .pagination {
+<<<<<<< HEAD
   font-size: 1rem;
+=======
+  color: var(--btn-patinator-text-color);
+  font-family: Lato, sans-serif;
+
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
   a:hover {
     text-decoration: none;
   }
 
   .page-item {
     .page-link {
+<<<<<<< HEAD
       color: var(--btn-patinator-text-color);
       width: 2.5rem;
       height: 2.5rem;
@@ -25,10 +32,24 @@
       border: 1px solid var(--btn-paginator-border-color);
       font-family: 'Lato', sans-serif;
       background-color: var(--button-bg);
+=======
+      color: inherit;
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: 0;
+      display: -webkit-box;
+      -webkit-box-pack: center;
+      -webkit-box-align: center;
+      border-radius: 50%;
+      border: 1px solid var(--btn-paginator-border-color);
+      background-color: var(--button-bg);
+
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
       &:hover {
         background-color: var(--btn-paginator-hover-color);
       }
     }
+<<<<<<< HEAD
     &.active {
       .page-link {
         background-color: var(--btn-active-bg);
@@ -39,22 +60,44 @@
     }
     &.disabled {
       cursor: not-allowed;
+=======
+
+    &.active {
+      .page-link {
+        background-color: var(--btn-paginator-hover-color);
+        color: var(--btn-text-color);
+      }
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
       .page-link {
         color: rgba(108, 117, 125, 0.57);
         border-color: var(--btn-paginator-border-color);
         background-color: var(--button-bg);
       }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
     &:first-child .page-link,
     &:last-child .page-link {
       border-radius: 50%;
     }
+<<<<<<< HEAD
     &:not(:last-child) {
       margin-right: 0.7rem;
     }
   } // .page-item
 
 } // .pagination
+=======
+  } /* .page-item */
+} /* .pagination */
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
 
 #post-list {
   margin-top: 1rem;
@@ -77,9 +120,33 @@
     .post-meta {
       i {
         font-size: 0.73rem;
+<<<<<<< HEAD
       }
       span:not(:last-child) {
         margin-right: 1.2rem;
+=======
+
+        &:not(:first-child) {
+          margin-left: 1.2rem;
+        }
+      }
+
+      em {
+        @extend %normal-font-style;
+      }
+
+      .pin {
+        i {
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+          padding-left: 3px;
+          color: var(--pin-color);
+        }
+
+        span {
+          display: none;
+        }
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
       }
     }
 
@@ -87,6 +154,10 @@
       margin-top: 0.6rem;
       margin-bottom: 0.6rem;
       color: var(--post-list-text-color);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
       > p {
         /* Make preview shorter on the homepage */
         margin: 0;
@@ -97,6 +168,7 @@
         -webkit-box-orient: vertical;
       }
     }
+<<<<<<< HEAD
 
     .pin {
       > i {
@@ -112,19 +184,39 @@
   } // .post-preview
 
 } // #post-list
+=======
+  } /* .post-preview */
+} /* #post-list */
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
 
 /* Hide SideBar and TOC */
 @media all and (max-width: 830px) {
   .pagination {
+<<<<<<< HEAD
     justify-content: center;
+=======
+    justify-content: space-evenly;
+
+    .page-item {
+      &:not(:first-child):not(:last-child) {
+        display: none;
+      }
+    }
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
   }
 }
 
 /* Sidebar is visible */
 @media all and (min-width: 831px) {
+<<<<<<< HEAD
 
   #post-list {
     margin-top: 1.5rem;
+=======
+  #post-list {
+    margin-top: 1.5rem;
+
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
     .post-preview .post-meta {
       .pin {
         background: var(--pin-bg);
@@ -144,6 +236,7 @@
 
   .pagination {
     font-size: 0.85rem;
+<<<<<<< HEAD
     .page-item .page-link {
       width: 2.2rem;
       height: 2.2rem;
@@ -153,6 +246,27 @@
 }
 
 /* Pannel hidden */
+=======
+
+    .page-item {
+      &:not(:last-child) {
+        margin-right: 0.7rem;
+      }
+
+      .page-link {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    .page-index {
+      display: none;
+    }
+  } /* .pagination */
+}
+
+/* Panel hidden */
+>>>>>>> 684f32b1f4d74433fccc767095b153fc618db864
 @media all and (max-width: 1200px) {
   #post-list {
     padding-right: 0;
